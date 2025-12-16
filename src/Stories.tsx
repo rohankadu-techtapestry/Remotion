@@ -1,25 +1,28 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { AbsoluteFill, continueRender, delayRender } from "remotion";
-// import { Box } from "@mui/material";
+// import { Box, Typography } from "@mui/material";
 import Background from "./Background";
 
-import { type MessageProps } from "./types";
+import useMsgStore from "./store/useMsgStore";
 
 const Stories: React.FC<{ messageIds: number[] }> = ({ messageIds }) => {
   const [handle] = useState(() => delayRender());
-  const [message, setMessages] = useState<MessageProps[] | null>(null);
+
+  const message = useMsgStore((state) => state.message);
+  const setMessages = useMsgStore((state) => state.setMessage);
+
   const fetchMessage = useCallback(async () => {
-    const messages = await Promise.all(
+    const fetchMessages = await Promise.all(
       messageIds.map(async (msg) => {
         const response = await fetch(`https://dummyjson.com/comments/${msg}`);
         const json = await response.json();
         return json;
       }),
     );
-    console.log(messages);
-    setMessages(messages);
+    console.log(fetchMessages);
+    setMessages(fetchMessages);
     continueRender(handle);
-  }, [handle, messageIds]);
+  }, [handle, messageIds, setMessages]);
 
   useEffect(() => {
     fetchMessage();

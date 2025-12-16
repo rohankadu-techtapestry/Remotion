@@ -13,7 +13,7 @@ export const RemotionRoot: React.FC = () => {
         // npx remotion render HelloWorld
         id="Stories"
         component={Stories}
-        durationInFrames={7 * 30}
+        durationInFrames={20 * 30}
         fps={30}
         width={1080}
         height={1920}
@@ -21,7 +21,7 @@ export const RemotionRoot: React.FC = () => {
         // https://www.remotion.dev/docs/parametrized-rendering
         // schema={myCompSchema}
         defaultProps={{
-          messageIds: [1, 5],
+          messageIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         }}
       />
 

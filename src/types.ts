@@ -8,23 +8,23 @@
 //   verified?: boolean;
 // };
 
-export type ChatMessage = {
-  _id: string;
-  text: string;
-  createdAt: number;
-  uni_identifier: string;
-  university: "UZH";
-  userId: string;
-  system?: boolean;
-  likes?: string[];
-  quotes?: string;
-};
+// export type ChatMessage = {
+//   _id: string;
+//   text: string;
+//   createdAt: number;
+//   uni_identifier: string;
+//   university: "UZH";
+//   userId: string;
+//   system?: boolean;
+//   likes?: string[];
+//   quotes?: string;
+// };
 
-export type SingleMessageApiResponse = {
-  messages: ChatMessage;
-  user: User;
-  userWhoLiked: User[];
-};
+// export type SingleMessageApiResponse = {
+//   messages: ChatMessage;
+//   user: User;
+//   userWhoLiked: User[];
+// };
 interface User {
   fullName: string;
   id: number;
