@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { Avatar, Box, Stack, Typography } from "@mui/material";
 import useMsgStore from "./store/useMsgStore";
-import { interpolate, useCurrentFrame } from "remotion";
+import { interpolate } from "remotion";
 
 const FRAMES_PER_MESSAGE = 60;
 const ANIMATION_DURATION = 30;
